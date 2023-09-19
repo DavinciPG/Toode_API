@@ -36,7 +36,6 @@ router.get("/muuda-aktiivsust", (req: Request, res: Response) => {
 router.get("/muuda-nime/:uusnimi", (req: Request, res: Response) => {
     const { uusnimi } = req.params;
     if (toode !== null) {
-        // Update the product's name with the new name from the URL parameter
         toode.name = uusnimi;
     }
     res.send(toode);
