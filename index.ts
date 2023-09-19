@@ -1,6 +1,9 @@
 import express, { Express, Request, Response } from "express";
+import productsController from "./controllers/products"
 
 const app: Express = express();
+
+app.use('/', productsController);
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Express + TypeScript Server');
