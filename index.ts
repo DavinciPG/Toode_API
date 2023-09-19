@@ -4,6 +4,12 @@ import productlistController  from "./controllers/productlist"
 
 const app: Express = express();
 
+// I have an issue where my node cannot find CORS. It says I have it but keep getting the same error, so I made a workaround.
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3006');
+    next();
+});
+
 app.use('/', productsController);
 app.use('/', productlistController);
 
